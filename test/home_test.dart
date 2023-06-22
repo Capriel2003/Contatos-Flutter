@@ -23,6 +23,17 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text("Novo Contato"), findsOneWidget);
+
+    final nomeTF = find.widgetWithText(TextField, "Nome");
+    final telefoneTF = find.widgetWithText(TextField, "Telefone");
+    final emailTF = find.widgetWithText(TextField, "E-mail");
+
+    expect(nomeTF, findsOneWidget);
+    expect(telefoneTF, findsOneWidget);
+    expect(emailTF, findsOneWidget);
+
+    expect(find.widgetWithText(ElevatedButton, "Cancelar"), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, "Adicionar"), findsOneWidget);
   }); 
 
 
